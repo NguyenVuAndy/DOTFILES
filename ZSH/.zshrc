@@ -69,7 +69,12 @@ ZSH_THEME="geoffgarside"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-autocomplete
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,16 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# Download Znap, if it's not there yet.
-[[ -r ~/Repos/znap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
-source ~/Repos/znap/znap.zsh  # Start Znap
 
 # zsh-autocomplete
-znap source marlonrichert/zsh-autocomplete
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+# zsh-autosuggest config
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export PATH="$PATH:/opt/mssql-tools/bin"
 alias open='xdg-open'

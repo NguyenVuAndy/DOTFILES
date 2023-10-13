@@ -5,6 +5,8 @@ return require('packer').startup(function()
     use 'luochen1990/rainbow'
     use 'neovimhaskell/haskell-vim'
     use 'tpope/vim-surround'
+    use 'nvim-pack/nvim-spectre'
+    use 'nvim-lua/plenary.nvim'
     use 'tpope/vim-commentary'
     use 'Shirk/vim-gas'
     use 'junegunn/fzf'
