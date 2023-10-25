@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# jump
+eval "$(jump shell)"
+
 # zsh-autocomplete
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
@@ -112,5 +115,12 @@ bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+#MSSQL
 export PATH="$PATH:/opt/mssql-tools/bin"
+
 alias open='xdg-open'
+
+#NNN
+export NNN_PLUG='f:finder;o:fzopen;p:preview-tui;d:diffs;t:preview-tabbed;i:imgview;j:jump;v:vidthumb'
+alias nnn='nnn -e'
+export NNN_FIFO='/tmp/nnn.fifo' nnn
