@@ -104,6 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Open tmux on launch
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 # jump
 eval "$(jump shell)"
 
@@ -119,6 +124,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 alias open='xdg-open'
+alias vim='nvim'
 
 #NNN
 export NNN_PLUG='f:finder;o:fzopen;p:preview-tui;d:diffs;t:preview-tabbed;i:imgview;j:jump;v:vidthumb'
