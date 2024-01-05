@@ -90,3 +90,4 @@ export PS1="\[\e[31m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 alias open='xdg-open'
+alias vim='nvim'
