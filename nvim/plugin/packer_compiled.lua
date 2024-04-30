@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/andy/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?/init.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/andy/.cache/nvim/packer_hererocks/2.1.1694285958/lib/lua/5.1/?.so"
+local package_path_str = "/home/andy/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/andy/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/andy/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/andy/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
   },
-  neoterm = {
-    loaded = true,
-    path = "/home/andy/.local/share/nvim/site/pack/packer/start/neoterm",
-    url = "https://github.com/kassio/neoterm"
-  },
   ["nim.nvim"] = {
     loaded = true,
     path = "/home/andy/.local/share/nvim/site/pack/packer/start/nim.nvim",
@@ -159,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/andy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/home/andy/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/nvim-pack/nvim-spectre"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/andy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -174,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/andy/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/andy/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   rainbow = {
     loaded = true,

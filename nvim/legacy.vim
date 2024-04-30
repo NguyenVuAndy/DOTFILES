@@ -54,8 +54,6 @@ syntax on
 " automatically read on change
 :set autoread
 
-nnoremap <A-t> :Ttoggle<CR>
-" nnoremap <A-t> :Ttoggle<cr>
 " Insert new line above without going into insert mode
 " (uses mark o to return to the previous cursor column)
 nnoremap <A-Enter> moO<Esc>`o
@@ -89,17 +87,10 @@ nnoremap <silent> <A-w> :%y+<CR>
 nnoremap <silent> <C-s> :call fzf#run({
 \   'tmux_height': '40%',
 \   'sink':        'botright split' })<CR>
-" nnoremap <A-t> :botright split +resize12 term://zsh<CR>
-
-let mapleader=","
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-let g:neoterm_default_mod = 'botright'
-let g:neoterm_size = 13
-let g:neoterm_autoinsert = 1
 
 " Colorscheme
 set termguicolors
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 :colorscheme gruvbox
 hi LspCxxHlGroupMemberVariable guifg=#83a598
@@ -112,7 +103,7 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+ set signcolumn=number
 else
   set signcolumn=yes
 endif

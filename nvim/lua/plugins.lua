@@ -35,5 +35,4 @@ return require('packer').startup(function()
     use 'easymotion/vim-easymotion'
     use 'tpope/vim-fugitive'
     use 'sjl/badwolf'
-    use 'kassio/neoterm'
 end)
