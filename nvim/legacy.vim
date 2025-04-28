@@ -75,8 +75,21 @@ nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>hh :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR>
+
 " <leader>p: find and replace with nvim-spectre
 nnoremap <silent> <leader>l :lua require('spectre').open()<CR>
+
+" Go to tab by number
+noremap <silent> <leader>1 1gt
+noremap <silent> <leader>2 2gt
+noremap <silent> <leader>3 3gt
+noremap <silent> <leader>4 4gt
+noremap <silent> <leader>5 5gt
+noremap <silent> <leader>6 6gt
+noremap <silent> <leader>7 7gt
+noremap <silent> <leader>8 8gt
+noremap <silent> <leader>9 9gt
+noremap <silent> <leader>0 :tablast<cr>
 
 " <leader>fr: find and replace in current file
 nnoremap <silent> <leader>g viw:lua require('spectre').open_file_search()<CR>
