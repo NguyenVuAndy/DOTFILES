@@ -46,5 +46,6 @@ require("lazy").setup({
   { "ntpeters/vim-better-whitespace" },
   { "neovimhaskell/haskell-vim" },
   { "rust-lang/rust.vim" },
+  { "mfussenegger/nvim-jdtls" },
 })
 

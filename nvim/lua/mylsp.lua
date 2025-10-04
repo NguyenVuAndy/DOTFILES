@@ -72,6 +72,22 @@ vim.lsp.config("pyright", {
   capabilities = capabilities,
 })
 
+-- java config (using jdtls)
+local home = os.getenv("HOME")
+local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls" -- if installed via mason
+local workspace_dir = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
+vim.lsp.config("jdtls", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "jdtls",
+    "-data", workspace_dir,
+  },
+  filetypes = { "java" },
+  root_markers = { "gradlew", "mvnw", ".git" },
+})
+
 -- enable all
-vim.lsp.enable({ "clangd", "zls", "pyright" })
+vim.lsp.enable({ "clangd", "zls", "pyright", "jdtls" })
 
