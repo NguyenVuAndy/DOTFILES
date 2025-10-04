@@ -145,13 +145,6 @@ au BufEnter,BufNew *.hpp nnoremap <silent> ;xp :rightbelow split %<.cpp<CR>
 " surround with std::optional
 nnoremap <silent> ;cso :execute 's/\(' . expand('<cWORD>') . '\)/std::optional<\1>'<CR>:noh<CR>
 
-" zig config
-au FileType zig nmap <Leader>dt <cmd>lua vim.lsp.buf.definition()<CR>
-au FileType zig nmap <Leader>h  <cmd>lua vim.lsp.buf.hover()<CR>
-au FileType zig nmap <Leader>p  <cmd>lua vim.lsp.buf.signature_help()<CR>
-au FileType zig nmap <Leader>gd  <cmd>lua vim.lsp.buf.document_symbol()<CR>
-au FileType zig setlocal omnifunc=v:lua.vim.lsp.omnifunc
-
 " enable history for fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 

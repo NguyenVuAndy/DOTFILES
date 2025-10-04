@@ -60,12 +60,6 @@ vim.lsp.config("clangd", {
   init_option = { fallbackFlags = { "-std=c++2a" } },
 })
 
--- zls config
-vim.lsp.config("zls", {
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
 -- pyright config
 vim.lsp.config("pyright", {
   on_attach = on_attach,
@@ -89,5 +83,5 @@ vim.lsp.config("jdtls", {
 })
 
 -- enable all
-vim.lsp.enable({ "clangd", "zls", "pyright", "jdtls" })
+vim.lsp.enable({ "clangd", "pyright", "jdtls" })
 

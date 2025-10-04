@@ -40,12 +40,11 @@ require("lazy").setup({
   { "tpope/vim-fugitive" },
   { "junegunn/fzf" },
   { "junegunn/fzf.vim" },
+  { "nvim-pack/nvim-spectre", dependencies = { "nvim-lua/plenary.nvim" } },
 
   -- Optional extras
   { "easymotion/vim-easymotion" },
   { "ntpeters/vim-better-whitespace" },
-  { "neovimhaskell/haskell-vim" },
-  { "rust-lang/rust.vim" },
   { "mfussenegger/nvim-jdtls" },
 })
 
