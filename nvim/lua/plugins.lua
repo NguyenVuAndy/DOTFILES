@@ -1,38 +1,50 @@
-return require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'morhetz/gruvbox'
-    use 'rust-lang/rust.vim'
-    use 'luochen1990/rainbow'
-    use 'neovimhaskell/haskell-vim'
-    use 'tpope/vim-surround'
-    use 'nvim-pack/nvim-spectre'
-    use 'nvim-lua/plenary.nvim'
-    use 'tpope/vim-commentary'
-    use 'Shirk/vim-gas'
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
-    use 'DingDean/wgsl.vim'
-    use 'alaviss/nim.nvim'
-    use 'tpope/vim-dispatch'
-    use 'neovim/nvim-lspconfig'
-    use 'ray-x/lsp_signature.nvim'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/vim-vsnip'
-    use 'zefei/vim-colortuner'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'sbdchd/neoformat'
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use 'ntpeters/vim-better-whitespace'
-    use 'windwp/nvim-autopairs'
-	use 'preservim/vimux'
-    use 'easymotion/vim-easymotion'
-    use 'tpope/vim-fugitive'
-    use 'sjl/badwolf'
-end)
+-- ~/.config/nvim/lua/plugins.lua
+
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- List of plugins
+require("lazy").setup({
+  -- Theme
+  { "morhetz/gruvbox" },
+
+  -- LSP + completion
+  { "neovim/nvim-lspconfig" },
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-cmdline" },
+  { "hrsh7th/vim-vsnip" },
+  { "ray-x/lsp_signature.nvim" },
+
+  -- Syntax highlighting
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+  -- UI
+  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  { "windwp/nvim-autopairs" },
+  { "tpope/vim-surround" },
+  { "tpope/vim-commentary" },
+  { "tpope/vim-fugitive" },
+  { "junegunn/fzf" },
+  { "junegunn/fzf.vim" },
+
+  -- Optional extras
+  { "easymotion/vim-easymotion" },
+  { "ntpeters/vim-better-whitespace" },
+  { "neovimhaskell/haskell-vim" },
+  { "rust-lang/rust.vim" },
+})
+
