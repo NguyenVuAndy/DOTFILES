@@ -132,19 +132,6 @@ augroup cursorline
     autocmd WinEnter * exe winnr('$')>1 ? "set cursorline" : "set nocursorline"
 augroup END
 
-" switch between hpp and cpp
-au BufEnter,BufNew *.cpp nnoremap <silent> ;p :e %<.hpp<CR>
-au BufEnter,BufNew *.hpp nnoremap <silent> ;p :e %<.cpp<CR>
-
-au BufEnter,BufNew *.cpp nnoremap <silent> ;vp :leftabove vs %<.hpp<CR>
-au BufEnter,BufNew *.hpp nnoremap <silent> ;vp :rightbelow vs %<.cpp<CR>
-
-au BufEnter,BufNew *.cpp nnoremap <silent> ;xp :leftabove split %<.hpp<CR>
-au BufEnter,BufNew *.hpp nnoremap <silent> ;xp :rightbelow split %<.cpp<CR>
-
-" surround with std::optional
-nnoremap <silent> ;cso :execute 's/\(' . expand('<cWORD>') . '\)/std::optional<\1>'<CR>:noh<CR>
-
 " enable history for fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
@@ -187,23 +174,5 @@ set cino=(0,W4
 
 " colorcolumn 80, tab width 4 for shaders
 autocmd BufRead,BufNewFile *.sc setlocal colorcolumn=80 | SetTab 4
-
-" nim config
-autocmd BufRead,BufNewFile *.nim  setlocal colorcolumn=80
-autocmd BufRead,BufNewFile *.nims setlocal colorcolumn=80
-autocmd BufRead,BufNewFile *.nim SetTab 2
-autocmd BufRead,BufNewFile *.nims SetTab 2
-
-" Binary files -> xxd
-augroup Binary
-  au!
-  au BufReadPre  *.bin let &bin=1
-  au BufReadPost *.bin if &bin | %!xxd
-  au BufReadPost *.bin set ft=xxd | endif
-  au BufWritePre *.bin if &bin | %!xxd -r
-  au BufWritePre *.bin endif
-  au BufWritePost *.bin if &bin | %!xxd
-  au BufWritePost *.bin set nomod | endif
-augroup END
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
