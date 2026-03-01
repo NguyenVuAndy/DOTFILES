@@ -111,4 +111,7 @@ fi
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 alias open='xdg-open'
-alias vim='nvim'
+
+# Created by `pipx` on 2025-06-30 09:11:42
+export PATH="$PATH:/home/andy/.local/bin"
+export PATH="/home/andy/.config/herd-lite/bin:$PATH"

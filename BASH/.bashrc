@@ -73,7 +73,7 @@ _open_files_for_editing() {
     fi
 
     echo "$FUNCNAME: package 'xdg-utils' or 'exo' is required." >&2
-    
+
 }
 
 #------------------------------------------------------------
@@ -86,8 +86,4 @@ _open_files_for_editing() {
 # alias pacdiff=eos-pacdiff
 ################################################################################
 export PS1="\[\e[31m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e[m\] \[\e[38;5;214m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\\$ "
-
-export PATH="$PATH:/opt/mssql-tools/bin"
-
 alias open='xdg-open'
-alias vim='nvim'
