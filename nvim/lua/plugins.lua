@@ -35,15 +35,11 @@ require("lazy").setup({
   -- UI
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
   { "windwp/nvim-autopairs" },
-  { "tpope/vim-surround" },
   { "tpope/vim-commentary" },
-  { "tpope/vim-fugitive" },
   { "junegunn/fzf" },
   { "junegunn/fzf.vim" },
-  { "nvim-pack/nvim-spectre", dependencies = { "nvim-lua/plenary.nvim" } },
 
   -- Optional extras
-  { "easymotion/vim-easymotion" },
   { "ntpeters/vim-better-whitespace" },
   { "mfussenegger/nvim-jdtls" },
 })

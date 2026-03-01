@@ -62,18 +62,6 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 tnoremap <esc> <C-\><C-N>
-" PLUGIN: FZF
-nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <S-f> :Files<CR>
-" C-g: FZF ('g'rep)/find in files
-nnoremap <silent> <Leader>G :Rg<CR>
-nnoremap <silent> <Leader>/ :BLines<CR>
-nnoremap <silent> <Leader>' :Marks<CR>
-nnoremap <silent> <Leader>g :Commits<CR>
-nnoremap <silent> <Leader>H :Helptags<CR>
-nnoremap <silent> <Leader>hh :History<CR>
-nnoremap <silent> <Leader>h: :History:<CR>
-nnoremap <silent> <Leader>h/ :History/<CR>
 
 " Go to tab by number
 noremap <silent> <leader>1 1gt
@@ -90,34 +78,9 @@ noremap <silent> <leader>0 :tablast<cr>
 " Copy whole file
 nnoremap <silent> <A-w> :%y+<CR>
 
-nnoremap <silent> <C-s> :call fzf#run({
-\   'tmux_height': '40%',
-\   'sink':        'botright split' })<CR>
-
-" Colorscheme
-set termguicolors
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
-:colorscheme gruvbox
-hi LspCxxHlGroupMemberVariable guifg=#83a598
-
 " auto-pairs
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
- set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" switch between split windows
-for n in range(1, 9)
-    exe "nnoremap <silent> <M-".n."> :".n."wincmd w<CR>"
-endfor
 
 " cursorline
 augroup cursorline
