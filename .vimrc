@@ -53,6 +53,8 @@ syntax on
 " automatically read on change
 :set autoread
 
+let mapleader = ","
+
 " Insert new line above without going into insert mode
 " (uses mark o to return to the previous cursor column)
 nnoremap <A-Enter> moO<Esc>`o
@@ -62,18 +64,6 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 tnoremap <esc> <C-\><C-N>
-
-" Go to tab by number
-noremap <silent> <leader>1 1gt
-noremap <silent> <leader>2 2gt
-noremap <silent> <leader>3 3gt
-noremap <silent> <leader>4 4gt
-noremap <silent> <leader>5 5gt
-noremap <silent> <leader>6 6gt
-noremap <silent> <leader>7 7gt
-noremap <silent> <leader>8 8gt
-noremap <silent> <leader>9 9gt
-noremap <silent> <leader>0 :tablast<cr>
 
 " Copy whole file
 nnoremap <silent> <A-w> :%y+<CR>
@@ -88,36 +78,15 @@ augroup cursorline
     autocmd WinEnter * exe winnr('$')>1 ? "set cursorline" : "set nocursorline"
 augroup END
 
-" enable history for fzf
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-" Function to trim extra whitespace in whole file
-function! Trim()
-  let l:save = winsaveview()
-  keeppatterns %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-
-command! -nargs=0 Trim call Trim()
-
-" Function to set tab width to n spaces
-function! SetTab(n)
-  let &tabstop=a:n
-  let &shiftwidth=a:n
-  let &softtabstop=a:n
-  set expandtab
-  set autoindent
-  set smartindent
-endfunction
-
-" ;t is trim
-nnoremap <silent> ;t :Trim<CR>
+" move among buffers with CTRL
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
 
 " ;w is save
 noremap <silent> ;w :update<CR>
 
-";f formats in normal mode
-noremap <silent> ;f gg=G``:w<CR>
+" Change buffer
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 " C/C++ indent options: fix extra indentation on function continuation
 set cino=(0,W4
